@@ -9,16 +9,20 @@ import pickle
 
 app = Flask(__name__)
 
-popular_df = pickle.load(open('popular_df.pkl',mode='rb'))
+# popular_df = pickle.load(open('popular_df.pkl',mode='rb'))
+popular_df = pd.read_pickle('popular_df.pkl')
 # ['Book-Title', 'Book-Author', 'Image-URL-M', 'Num_ratings', 'Avg_ratings']
 
-pivot = pickle.load(open('pivot.pkl',mode='rb'))
+# pivot = pickle.load(open('pivot.pkl',mode='rb'))
+pivot = pd.read_pickle('pivot.pkl')
 # [index='Book-Title' , columns='User-ID' , values='Book-Rating']  , (706, 810)
 
-books = pickle.load(open('books.pkl',mode='rb'))
+# books = pickle.load(open('books.pkl',mode='rb'))
+books = pd.read_pickle('books.pkl')
 # ['ISBN', 'Book-Title', 'Book-Author', 'Year-Of-Publication', 'Publisher','Image-URL-S', 'Image-URL-M''Image-URL-L']
 
-cos_sim = pickle.load(open('cos_sim.pkl',mode='rb'))
+# cos_sim = pickle.load(open('cos_sim.pkl',mode='rb'))
+cos_sim = pd.read_pickle('cos_sim.pkl')
 # 706 rows × 706 columns
 
 
